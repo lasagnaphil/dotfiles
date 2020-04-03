@@ -1,0 +1,50 @@
+" Spaces & Tabs
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set expandtab
+set smarttab
+set ai
+set si
+
+" UI Config
+set number
+set wildmenu
+set showmatch
+
+" Display status line always
+set statusline=2
+set laststatus=2
+set ttimeoutlen=50
+
+" Searching
+set incsearch
+set hlsearch
+nnoremap <leader><space> :nohlsearch<CR>
+
+" Folding
+set foldenable
+set foldlevelstart=10
+set foldnestmax=10
+nnoremap <space> za
+
+" Movement
+nnoremap j gj
+nnoremap k gk
+nnoremap gV `[v`]
+
+" Leader shortcuts
+let mapleader = ","
+
+" Duh.
+inoremap jk <Esc>
+
+" Better split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" More natural split opening
+set splitbelow
+set splitright
