@@ -10,11 +10,6 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'vim-airline/vim-airline'
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
-
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
@@ -27,6 +22,10 @@ Plug 'vim-scripts/asmx86_64'
 Plug 'pangloss/vim-javascript'
 
 Plug 'donRaphaco/neotex', { 'for': 'tex' }
+
+Plug 'neovim/nvim-lspconfig'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete-lsp'
 
 call plug#end()
 
@@ -116,3 +115,23 @@ map <C-p> :Files<CR>
 let g:neotex_enabled = 2
 let g:neotex_pdflatex_alternative = 'xelatex'
 let g:tex_flavor = 'latex'
+
+" nvim-lsp settings
+lua <<EOF
+    require'nvim_lsp'.clangd.setup{}
+    require'nvim_lsp'.pyls.setup{}
+EOF
+
+nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
+nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+
+" Deoplete
+let g:deoplete#enable_at_startup=1
+
