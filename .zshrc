@@ -19,19 +19,16 @@ antigen theme agnoster
 # Tell antigen that you're done.
 antigen apply
 
+export PATH=$PATH:/home/lasagnaphil/.local/bin
+
 # Now setup some aliases
-alias clion=/home/lasagnaphil/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/201.7846.88/bin/clion.sh
 alias vim=nvim
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
-
-# Environment variables related to PhysX
-export PHYSX_HOME=/home/lasagnaphil/packages/PhysX/physx
-export PXSHARED_HOME=/home/lasagnaphil/packages/PhysX/pxshared
 
 # System libraries
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
-# IBus settings
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
+# IME settings
+export GTK_IM_MODULE=kime
+export QT_IM_MODULE=kime
+export XMODIFIERS=@im=kime

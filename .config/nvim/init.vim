@@ -33,6 +33,8 @@ call plug#end()
 " Colors
 syntax on
 
+set guifont=Hack:12
+
 filetype on
 au BufNewFile,BufRead *.rs set filetype=rust
 
