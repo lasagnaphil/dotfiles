@@ -1,0 +1,53 @@
+---
+default_category: Latin
+category_layout:
+  Latin: direct
+  Hangul: dubeolsik
+global_category_state: false
+word_commit: false
+icon_color: Black
+hotkeys:
+  M-C-E:
+    behavior: Emoji
+    result: ConsumeIfProcessed
+  Esc:
+    behavior:
+      Switch: Latin
+    result: Bypass
+  ControlR:
+    behavior: Hanja
+    result: Consume
+  Muhenkan:
+    behavior:
+      Toggle:
+        - Hangul
+        - Latin
+    result: Consume
+  Alt_R:
+    behavior:
+      Toggle:
+        - Hangul
+        - Latin
+    result: Consume
+  Hangul:
+    behavior:
+      Toggle:
+        - Hangul
+        - Latin
+    result: Consume
+  HangulHanja:
+    behavior: Hanja
+    result: Consume
+  F9:
+    behavior: Hanja
+    result: Consume
+layout_addons:
+  all:
+    - ComposeChoseongSsang
+  dubeolsik:
+    - TreatJongseongAsChoseong
+xim_preedit_font:
+  - D2Coding
+  - 15.0
+
+
